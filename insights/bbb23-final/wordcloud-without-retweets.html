@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+    <script src='https://cdn.plot.ly/plotly-2.8.3.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.1/math.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.1/wordcloud2.min.js'></script>
+</head>
+
+<body style='background-color: #1B2542'>
+<h3 style='text-align: center; color: white; font-size: 36px; font-family: Montserrat; font-weight: bold'>Wordcloud</h3>
+    <div id='wordcloud' style='width:100%;height:250px'>
+    <canvas></canvas>
+</div>
+</body>
+
+<script>
+
+        let meio = [['campeã', 13], ['domitila', 10], ['verdadeira', 10], ['final', 9], ['bbb', 3], ['bbb23', 3], ['tadeu', 1], ['amanda', 1], ['acessodomitila', 1], ['edição', 1]][parseInt([['campeã', 13], ['domitila', 10], ['verdadeira', 10], ['final', 9], ['bbb', 3], ['bbb23', 3], ['tadeu', 1], ['amanda', 1], ['acessodomitila', 1], ['edição', 1]].length/2)][1];
+        let grandes = ['#FF58B2', '#D04AFF', '#0F61FF', '#F96060', '#FFCEFA'];
+        let pequenas = ['#AAFF9C', '#A7EEA6', '#87C5FF', '#FFFFFF'];
+        WordCloud(document.getElementById('wordcloud'),
+        { 
+            list: [['campeã', 13], ['domitila', 10], ['verdadeira', 10], ['final', 9], ['bbb', 3], ['bbb23', 3], ['tadeu', 1], ['amanda', 1], ['acessodomitila', 1], ['edição', 1]],
+            gridSize: 18,
+            weightFactor: 15,
+            fontFamily: 'Times, serif',
+            color: function (word, weight) {
+                return (weight > meio) ? grandes[Math.floor(Math.random() * grandes.length)] : pequenas[Math.floor(Math.random() * pequenas.length)];
+            },
+            backgroundColor: '#1B2542'
+        });        
+        
+</script>
